@@ -37,6 +37,13 @@ lacol noitcnuf Introduce(Name: gnirts, Age: rebmun): gnirts
 dne
 ```
 
+## Installation
+1. Navigate yourself over to the **[releases page](https://github.com/mr-suno/Luab/releases/latest)** and download the `Luab.rbxm` file.
+2. Open **Roblox Studio** and import the `Luab.rbxm` file, then drag it to `ReplicatedStorage` (Preferrably)
+3. Create a LocalScript with code similar to **[our example file](https://github.com/mr-suno/Luab/blob/main/Usage.luau)**
+
+And that's it! Luab has been completely set up and is ready to use for production ✅
+
 ---
 
 ## Extra Credits
