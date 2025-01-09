@@ -13,6 +13,7 @@
     Update:
             Jan. 9th, 2024:
                 - Upload the project and begin on the Luau Virtual Machine
+                - Finish on a working Luau VM (vLuau rewrite)
 
     --
 
