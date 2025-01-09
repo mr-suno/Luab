@@ -3,8 +3,6 @@
 local Deserializer = require(script.Parent:WaitForChild("Deserializer"))
 local Globals = require(script.Parent.Parent:FindFirstChild("Globals"))
 
--- Local Functions --
-
 -- Main Caller --
 
 local function Load(Module, Environment)
