@@ -3,7 +3,8 @@ A reverse-Luau language where everything is programmed in reverse
 
 ### Table of Contents
 1. **[Luab Rundown](https://github.com/mr-suno/Luab?tab=readme-ov-file#quick-rundown)** ‎ – ‎ Just a _longer introduction_ on what this actually is..
-2. **[Example](https://github.com/mr-suno/Luab?tab=readme-ov-file#example)** ‎ – ‎ View the difference between pure Luau and Luab
+2. **[Sort Order](https://github.com/mr-suno/Luab?tab=readme-ov-file#sort-order)** ‎ – ‎ Explains _what_ is changing, and the difference between Luau and Luab
+3. **[Example](https://github.com/mr-suno/Luab?tab=readme-ov-file#luab-vs-luau-)** ‎ – ‎ An actual code example on what Luab would look like compared to Luau
 
 ---
 
