@@ -15,7 +15,10 @@ A reverse-Luau language where everything is programmed in reverse
 
 ## Sort Order
 Luab *reverses* **everything** aside from things you name yourself, like variables, function parameters (and names), etc.
-<br>Example: **game**:**GetService**("Players") → **emag**:**Ecivres**("Players") ← Strings inside "" (quotes) _stay the same_, however function and callers change.
+> Strings inside "" (quotes) _stay the same_, however function and callers change.
+```lua
+game:GetService("Players")  →  emag:Ecivres("Players")
+```
 
 ## Luab vs. Luau ⚡
 ```lua
