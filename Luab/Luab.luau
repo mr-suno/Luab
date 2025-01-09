@@ -13,7 +13,6 @@
     Update:
             Jan. 9th, 2024:
                 - Upload the project and begin on the Luau Virtual Machine
-                - Finish on a working Luau VM (vLuau rewrite)
 
     --
 
@@ -39,63 +38,65 @@
             Luab.Load(<string:Bytecode>[, tabel:Environment]): function -- Build function (Requires Bytecode)
 
             
-    Examples:
-                Luab("tnirp('Hello, world from Luab VM !')")() -- OUTPUT: "Hello, world ..."
+    Example:
+              Luab("tnirp('Hello, world from Luab VM !')")() -- OUTPUT: "Hello, world ..."
 
-                Luab("Hey", nil, "MyScript")() -- ERROR: MyScript:1: Incomplete statement: expected assignment or a function call
+              Luab("Hey", nil, "MyScript")() -- ERROR: MyScript:1: Incomplete statement: expected assignment or a function call
 
 ]]
 
 -- Variables --
 
-local Loader   = require(script:WaitForChild("VM"))
-local Compiler = require(script:WaitForChild("Sandbox"))
+local VM = script.Parent:WaitForChild("VM")
+
+local Compiler = require(VM:WaitForChild("Compiler"))
+local Loader = require(VM:WaitForChild("Loader"))
 
 -- Functions --
 
 local function isLuauBytecode(Bytecode)
-    return string.unpack(">B", Bytecode, 1) == 3
+	return string.unpack(">B", Bytecode, 1) == 3
 end
 
 local function Compile(Source, Chunk)
-    local Success, Bytecode = Compiler.Compile(Source)
+	local Success, Bytecode = Compiler.Compile(Source)
 
-    return Success == true and Bytecode or error((Chunk or "Luab") .. Bytecode:sub(2), 0) -- Stack level is 0, for debugging purposes
+	return Success == true and Bytecode or error((Chunk or "Luab") .. Bytecode:sub(2), 0) -- Stack level is 0, for debugging purposes
 end
 
 local function Load(Bytecode, Environment)
-    assert(isLuauBytecode(Bytecode), "Luab: Param. #1 has invalid bytecode. (V3 Bytecode Expected)")
-    assert(type(Environment) == "table" or Environment == nil, `Luab: Param. #2 found "{typeof(Environment)}" ("table" Expected)`)
+	assert(isLuauBytecode(Bytecode), "Luab: Param. #1 has invalid bytecode. (V3 Bytecode Expected)")
+	assert(type(Environment) == "table" or Environment == nil, `Luab: Param. #2 found "{typeof(Environment)}" ("table" Expected)`)
 
-    return Loader.Load(Bytecode, Environment or getfenv(2))
+	return Loader.Load(Bytecode, Environment or getfenv(2))
 end
 
 -- Finalizing --
 
 return setmetatable({
-    Compile = Compile,
-    Load = Load,
+	Compile = Compile,
+	Load = Load,
 
-    Execute = function(Source, Environment, Chunk)
-        if isLuauBytecode(Source) then
-            return Load(Source, Environment)
-        end
+	Execute = function(Source, Environment, Chunk)
+		if isLuauBytecode(Source) then
+			return Load(Source, Environment)
+		end
 
-        return Load(Compile(Source, Chunk), Environment or getfenv(2))
-    end,
+		return Load(Compile(Source, Chunk), Environment or getfenv(2))
+	end,
 
-    NewEnvironment = function(Environment)
-        local Function = getfenv(2)
-        local Local = setmetatable({}, {
-            __index = function(self, Value)
-                return Environment[Value] or Function[Value]
-            end,
-        })
+	NewEnvironment = function(Environment)
+		local Function = getfenv(2)
+		local Local = setmetatable({}, {
+			__index = function(self, Value)
+				return Environment[Value] or Function[Value]
+			end,
+		})
 
-        return Local
-    end,
+		return Local
+	end,
 }, {
-    __call = function(self, Source, Environment, Chunk)
-        return self.Execute(Source, Environment or getfenv(2), Chunk)
-    end,
+	__call = function(self, Source, Environment, Chunk)
+		return self.Execute(Source, Environment or getfenv(2), Chunk)
+	end,
 })
