@@ -2,8 +2,8 @@
 A reverse-Luau language where everything is programmed in reverse
 
 ### Table of Contents
-1. **[Luab Rundown]()** ‎ – ‎ Just a _longer introduction_ on what this actually is..
-2. **[Example]()** ‎ – ‎ View the difference between pure Luau and Luab
+1. **[Luab Rundown](https://github.com/mr-suno/Luab?tab=readme-ov-file#quick-rundown)** ‎ – ‎ Just a _longer introduction_ on what this actually is..
+2. **[Example](https://github.com/mr-suno/Luab?tab=readme-ov-file#example)** ‎ – ‎ View the difference between pure Luau and Luab
 
 ---
 
