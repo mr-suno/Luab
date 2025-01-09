@@ -1,3 +1,5 @@
+-- Variables --
+
 local Globals = require(script.Parent.Parent:FindFirstChild("Globals"))
 local Opcodes = require(script.Parent.Parent:FindFirstChild("Opcodes"))
 
