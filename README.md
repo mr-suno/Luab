@@ -5,6 +5,7 @@ A reverse-Luau language where everything is programmed in reverse
 1. **[Luab Rundown](https://github.com/mr-suno/Luab?tab=readme-ov-file#quick-rundown)** ‎ – ‎ Just a _longer introduction_ on what this actually is..
 2. **[Sort Order](https://github.com/mr-suno/Luab?tab=readme-ov-file#sort-order)** ‎ – ‎ Explains _what_ is changing, and the difference between Luau and Luab
 3. **[Example](https://github.com/mr-suno/Luab?tab=readme-ov-file#luab-vs-luau-)** ‎ – ‎ An actual code example on what Luab would look like compared to Luau
+4. **[Installation Guide](https://github.com/mr-suno/Luab?tab=readme-ov-file#installation)** ‎ – ‎ Quick and easy guide on how to setup Luab in your own Roblox Studio environment
 
 ---
 
