@@ -94,9 +94,9 @@ local Extended_OP_List = {}
 
 -- Assigning Values --
 
-for Index, Value in _G.OP_List do
+for Index, Value in OP_List do
 	if Value[3] then
-		table.insert(_G.Extended_OP_List, Index)
+		table.insert(Extended_OP_List, Index)
 	end
 end
 
