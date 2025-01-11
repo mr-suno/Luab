@@ -11,13 +11,6 @@
 
 ]]
 
--- Avoid Re-execution --
--- To mainly just prevent a whole lotta lag --
-
-if getgenv().Luab ~= nil then
-	return warn("Luab: Luab and Luab functions will are not re-executable intentionally to avoid lag")
-end
-
 -- Define Globals
 
 loadstring(game:HttpGet("https://github.com/mr-suno/Luab/blob/main/Special/LoadModule.luau?raw=true"))()
