@@ -15,7 +15,7 @@ loadstring(game:HttpGet("https://github.com/mr-suno/Luab/blob/main/Special/LoadM
 -- Avoid Lagging --
 
 if not getgenv().Luab then
-  getgenv().Luab = LoadModule("https://github.com/mr-suno/Luab/blob/main/Special/Luab/Luab.luau")
+  	getgenv().Luab = LoadModule("https://github.com/mr-suno/Luab/blob/main/Special/Luab/Luab.luau")
   
 	return warn("-* Luab Global Protection *- Preventing lag by not allowing executions more than once!")
 end
