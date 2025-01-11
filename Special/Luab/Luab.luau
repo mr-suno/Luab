@@ -11,10 +11,6 @@
 
 ]]
 
--- Define Globals
-
-loadstring(game:HttpGet("https://github.com/mr-suno/Luab/blob/main/Special/LoadModule.luau?raw=true"))()
-
 -- Variables --
 
 local Compiler = getgenv().LoadModule("https://github.com/mr-suno/Luab/blob/main/Luab/VM/Compiler.luau")
