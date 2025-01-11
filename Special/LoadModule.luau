@@ -1,4 +1,4 @@
-local function LoadModule(ModuleScript)
+getgenv().LoadModule = function(ModuleScript)
     assert(type(ModuleScript) == "string", "ModuleScript should be the script's URL")
 
     if string.find(ModuleScript, "github.com") then
@@ -15,7 +15,3 @@ local function LoadModule(ModuleScript)
 
     return loadstring(game:HttpGet(ModuleScript))()
 end
-
-return {
-  LoadModule = LoadModule
-}
