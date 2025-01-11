@@ -13,7 +13,5 @@ getgenv().LoadModule = function(ModuleScript)
         return warn(`Failure loading ModuleScript, Response : {Response}`)
     end
 
-    print(Success, Response, ModuleScript)
-
     return loadstring(game:HttpGet(ModuleScript))()
 end
