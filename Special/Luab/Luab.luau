@@ -11,6 +11,14 @@
 
 ]]
 
+-- Avoid Lagging --
+
+if not getgenv().Luab then
+	return warn("Luab: Preventing lag by not allowing executions more than once!")
+end
+
+getgenv().Luab = true
+
 -- Define Globals
 
 loadstring(game:HttpGet("https://github.com/mr-suno/Luab/blob/main/Special/LoadModule.luau?raw=true"))()
@@ -41,7 +49,7 @@ end
 
 -- Finalizing --
 
-getgenv().Luab = setmetatable({
+return setmetatable({
 	Compile = Compile,
 	Load = Load,
 
