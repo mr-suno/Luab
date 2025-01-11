@@ -17,7 +17,7 @@ loadstring(game:HttpGet("https://github.com/mr-suno/Luab/blob/main/Special/LoadM
 
 -- Variables --
 
-local Compiler = getgenv().LoadModule("https://github.com/mr-suno/Luab/blob/main/Special/Luab/VM/Compiler.luau")
+local Compiler = getgenv().LoadModule("https://github.com/mr-suno/Luab/blob/main/Luab/VM/Compiler.luau")
 local Loader = getgenv().LoadModule("https://github.com/mr-suno/Luab/blob/main/Special/Luab/VM/Loader.luau")
 
 -- Functions --
