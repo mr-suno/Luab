@@ -17,7 +17,10 @@ loadstring(game:HttpGet("https://github.com/mr-suno/Luab/blob/main/Special/LoadM
 if not getgenv().Luab then
   	getgenv().Luab = LoadModule("https://github.com/mr-suno/Luab/blob/main/Special/Luab/Luab.luau")
   
-	return warn("-* Luab Global Protection *- Preventing lag by not allowing executions more than once!")
+	print("-* Luab Global *- Loaded the one-time compiler, it should lag a lot initially.")
+	print("-* Luab Global *- Don't worry, until a rejoin occurs, Luab execution will be seamless!")
+else
+	warn("-* Luab Global Protection *- Preventing lag by not allowing imports more than once!")
 end
 
 -- Sandbox Work --
@@ -35,7 +38,7 @@ function Sandbox.New()
 	function Environment.Load(Code)
 		assert(type(Code) == "string", `Code should be in a string format, got: {type(Code)}`)
 
-		local Function, Response = loadstring(Code, "Luab")
+		local Function, Response = getgenv().Luab(Code)
 		
 		if not Function then
 			error(`-* Luab Sandbox *- {Response}`)
@@ -53,4 +56,4 @@ function Sandbox.New()
 	return Environment
 end
 
-return Sandbox.New()
+Sandbox.New().Load("print('hi')")
