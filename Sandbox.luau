@@ -56,4 +56,6 @@ function Sandbox.New()
 	return Environment
 end
 
-Sandbox.New().Load("print('hi')")
+return {
+	Load = Sandbox.New().Load
+}
