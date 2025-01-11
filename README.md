@@ -1,6 +1,11 @@
 # Luab 💦
 A reverse-Luau language where everything is programmed in reverse
 
+> [!WARNING]
+> For people NOT using a game environment, _like an executor_, use the `Special` directory!
+
+> Or, **[click here](https://github.com/mr-suno/Luab/tree/main/Special)** to view it immediately, if you're lazy
+
 ### Table of Contents
 1. **[Luab Rundown](https://github.com/mr-suno/Luab?tab=readme-ov-file#quick-rundown)** ‎ – ‎ Just a _longer introduction_ on what this actually is..
 2. **[Sort Order](https://github.com/mr-suno/Luab?tab=readme-ov-file#sort-order)** ‎ – ‎ Explains _what_ is changing, and the difference between Luau and Luab
